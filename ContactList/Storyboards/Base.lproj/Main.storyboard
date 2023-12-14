@@ -34,13 +34,14 @@
                             <outlet property="delegate" destination="mS5-6M-aPx" id="QjS-b9-SBd"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.circle.fill" catalog="system" id="jSF-xS-K4U"/>
                     <navigationItem key="navigationItem" title="Persons List" id="iGE-He-5aC">
                         <barButtonItem key="backBarButtonItem" title="Back" id="NEG-kf-LbU"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEz-Za-eiZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359.5419847328244" y="-216.19718309859155"/>
+            <point key="canvasLocation" x="2286.2595419847326" y="-216.19718309859155"/>
         </scene>
         <!--Person Details View Controller-->
         <scene sceneID="ECq-er-iVO">
@@ -84,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31J-0W-Ehh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184" y="-216"/>
+            <point key="canvasLocation" x="3110.6870229007632" y="-216.19718309859155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v5H-X7-l9v">
@@ -97,15 +98,65 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mS5-6M-aPx" kind="relationship" relationship="rootViewController" id="Fqy-nE-py5"/>
+                        <segue destination="dwn-Pt-Pj8" kind="relationship" relationship="rootViewController" id="Fqy-nE-py5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ry6-oJ-cgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="432.82442748091603" y="-216.19718309859155"/>
         </scene>
+        <!--Persons List-->
+        <scene sceneID="tbE-VM-yW4">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dwn-Pt-Pj8" customClass="TabBarController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Persons List" id="rBx-p1-FEp"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qdU-xk-VaS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mS5-6M-aPx" kind="relationship" relationship="viewControllers" id="xR6-pt-Zhg"/>
+                        <segue destination="RwV-VK-rNe" kind="relationship" relationship="viewControllers" id="OnC-Bf-w1E"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-Hq-brP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359.5419847328244" y="-216.19718309859155"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="rno-Gh-fhb">
+            <objects>
+                <tableViewController id="RwV-VK-rNe" customClass="ExpandedInformationViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gdG-8i-FSg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expandedCell" id="T59-eG-ciu">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T59-eG-ciu" id="t9L-uM-nzh">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RwV-VK-rNe" id="vuI-jE-Xuj"/>
+                            <outlet property="delegate" destination="RwV-VK-rNe" id="hf8-vu-VOX"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.circle.fill" catalog="system" id="rsO-ol-LyD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3AC-nI-AZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360" y="482"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
