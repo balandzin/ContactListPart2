@@ -8,7 +8,7 @@
 import UIKit
 
 final class PersonsListViewController: UITableViewController {
-
+    
     var persons: [Person]!
     
     //MARK: - Navigation
@@ -17,10 +17,7 @@ final class PersonsListViewController: UITableViewController {
         let detailsVC = segue.destination as? PersonDetailsViewController
         detailsVC?.person = persons[indexPath.row]
     }
-}
-
-// MARK: - UITableViewDataSource
-extension PersonsListViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         persons.count
     }

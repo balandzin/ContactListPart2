@@ -13,7 +13,7 @@ final class PersonDetailsViewController: UIViewController {
     @IBOutlet var emailLabel: UILabel!
     
     var person: Person!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
