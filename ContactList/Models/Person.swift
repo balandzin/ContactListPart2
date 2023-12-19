@@ -26,7 +26,7 @@ struct Person {
         
         if !dataStore.names.isEmpty {
             for (index, _) in names.enumerated() {
-                if surnames.count > index && emails.count > index && telephones.count > index { // если в массивах разное количество элементов, то число элементов итогового массива будет равно минимальному
+                if surnames.count > index && emails.count > index && telephones.count > index {
                     
                     contacts.append(
                         Person(
