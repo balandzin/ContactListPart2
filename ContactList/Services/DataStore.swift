@@ -5,8 +5,8 @@
 //  Created by Антон Баландин on 14.12.23.
 //
 
-class DataStore {
-    let names: [String] = [ // явно определяю для избежания ошибки, если массив пустой
+final class DataStore {
+    let names = [
         "Антон",
         "Антон",
         "Кирилл",
@@ -24,7 +24,7 @@ class DataStore {
         "Виктор"
     ]
     
-    let surnames: [String] = [
+    let surnames = [
         "Соломахин",
         "Шулёв",
         "Луньков",
@@ -37,7 +37,7 @@ class DataStore {
         "Кропанин",
     ]
     
-    let telephones: [String] = [
+    let telephones = [
         "3751202684805",
         "3759312531959",
         "3755850392695",
@@ -55,7 +55,7 @@ class DataStore {
         "3757113638645"
     ]
     
-    let emails: [String] = [
+    let emails = [
         "o@outlook.com",
         "hr6zdl@yandex.ru",
         "kaft93x@outlook.com",

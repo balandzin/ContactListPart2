@@ -10,10 +10,6 @@ import UIKit
 final class ExpandedInformationViewController: UITableViewController {
     
     var persons: [Person]!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
 
 extension ExpandedInformationViewController {
@@ -27,6 +23,10 @@ extension ExpandedInformationViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

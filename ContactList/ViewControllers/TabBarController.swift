@@ -7,17 +7,17 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
-
-    let persons = Person.getPerson()
+final class TabBarController: UITabBarController {
+    
+    private let persons = Person.getPerson()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         transferObject()
     }
     
-    func transferObject() {
+    public func transferObject() {
         guard let viewControllers = viewControllers else { return }
         
         for viewController in viewControllers {
