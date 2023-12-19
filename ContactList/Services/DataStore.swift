@@ -9,7 +9,7 @@ final class DataStore {
     
     static let shared = DataStore()
     
-    let names = [
+    let names: Set = [
         "Антон",
         "Антон",
         "Кирилл",
@@ -27,7 +27,7 @@ final class DataStore {
         "Виктор"
     ]
     
-    let surnames = [
+    let surnames: Set = [
         "Соломахин",
         "Шулёв",
         "Луньков",
@@ -40,7 +40,7 @@ final class DataStore {
         "Кропанин",
     ]
     
-    let telephones = [
+    let telephones: Set = [
         "3751202684805",
         "3759312531959",
         "3755850392695",
@@ -58,7 +58,7 @@ final class DataStore {
         "3757113638645"
     ]
     
-    let emails = [
+    let emails: Set = [
         "o@outlook.com",
         "hr6zdl@yandex.ru",
         "kaft93x@outlook.com",

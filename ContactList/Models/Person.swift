@@ -6,6 +6,7 @@
 //
 
 struct Person {
+    
     let name: String
     let surname: String
     let telephone: String
@@ -15,30 +16,34 @@ struct Person {
         "\(name) \(surname)"
     }
     
-    static func getPerson() -> [Person]{
+    static func getPersons() -> [Person] {
+        
         var contacts:[Person] = []
         let dataStore = DataStore.shared
         
-        let names = Array(Set(dataStore.names))
-        let surnames = Array(Set(dataStore.surnames))
-        let telephones = Array(Set(dataStore.telephones))
-        let emails = Array(Set(dataStore.emails))
-        
-        if !dataStore.names.isEmpty {
-            for (index, _) in names.enumerated() {
-                if surnames.count > index && emails.count > index && telephones.count > index {
-                    
-                    contacts.append(
-                        Person(
-                            name: names[index],
-                            surname: surnames[index],
-                            telephone: telephones[index],
-                            email: emails[index]
-                        )
-                    )
-                }
+        let names = dataStore.names.shuffled()
+        let surnames = dataStore.surnames.shuffled()
+        let telephones = dataStore.telephones.shuffled()
+        let emails = dataStore.emails.shuffled()
+
+            let iterationCount = min(
+                names.count,
+                surnames.count,
+                telephones.count,
+                emails.count
+            )
+            
+            for index in 0..<iterationCount {
+                
+                let person = Person(
+                    name: names[index],
+                    surname: surnames[index],
+                    telephone: telephones[index],
+                    email: emails[index]
+                )
+                contacts.append(person)
             }
-        }
+        
         return contacts
     }
 }

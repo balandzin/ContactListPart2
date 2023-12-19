@@ -9,7 +9,7 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
-    private let persons = Person.getPerson()
+    private let persons = Person.getPersons()
     
     override func viewDidLoad() {
         super.viewDidLoad()
