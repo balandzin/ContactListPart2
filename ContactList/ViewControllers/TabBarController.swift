@@ -8,16 +8,15 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
-    
-    private let persons = Person.getPersons()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         transferObject()
     }
     
-    public func transferObject() {
+   public func transferObject() {
+       let persons = Person.getPersons()
+
         guard let viewControllers = viewControllers else { return }
         
         for viewController in viewControllers {
