@@ -17,7 +17,7 @@ struct Person {
     
     static func getPerson() -> [Person]{
         var contacts:[Person] = []
-        let dataStore = DataStore()
+        let dataStore = DataStore.shared
         
         let names = Array(Set(dataStore.names))
         let surnames = Array(Set(dataStore.surnames))
