@@ -26,6 +26,7 @@ extension PersonsListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         let person = persons[indexPath.row]
         
