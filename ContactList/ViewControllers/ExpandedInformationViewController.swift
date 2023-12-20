@@ -22,7 +22,7 @@ extension ExpandedInformationViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        persons[section].rows.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -31,18 +31,19 @@ extension ExpandedInformationViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath)
-        let person = persons[indexPath.section]
         
+        let person = persons[indexPath.section]
         var content = cell.defaultContentConfiguration()
+        content.text = person.rows[indexPath.row]
+        
         if indexPath.row == 0 {
             content.image = UIImage(systemName: "phone")
-            content.text = person.telephone
         } else if indexPath.row == 1 {
             content.image = UIImage(systemName: "tray")
-            content.text = person.email
         }
         
         cell.contentConfiguration = content
+        
         return cell
     }
 }

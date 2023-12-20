@@ -20,6 +20,6 @@ final class PersonDetailsViewController: UIViewController {
         phoneLabel.text = "Phone: \(person.telephone)"
         emailLabel.text = "Email: \(person.email)"
         
-        navigationItem.title = person.fullName
+        title = person.fullName
     }
 }

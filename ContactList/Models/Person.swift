@@ -16,6 +16,10 @@ struct Person {
         "\(name) \(surname)"
     }
     
+    var rows: [String] {
+        [telephone, email]
+    }
+    
     static func getPersons() -> [Person] {
         
         var contacts:[Person] = []
